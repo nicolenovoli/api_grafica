@@ -4,12 +4,14 @@ from app.database import Base, engine, SessionLocal
 
 from app.models import (
     cliente_model,
-    produto_model
+    produto_model,
+    pedido_model,
 )
 
 from app.routes import (
     cliente_routes,
-    produto_routes
+    produto_routes,
+    pedido_routes
 )
 
 from app.seed import criar_produtos_iniciais
@@ -33,6 +35,7 @@ iniciar_dados()
 
 app.include_router(cliente_routes.router)
 app.include_router(produto_routes.router)
+app.include_router(pedido_routes.router)
 
 
 @app.get("/")
