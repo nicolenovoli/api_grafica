@@ -11,7 +11,8 @@ from app.schemas.pedido_schema import (
 from app.services.pedido_service import (
     criar_pedido,
     listar_pedidos,
-    buscar_pedido_por_id
+    buscar_pedido_por_id,
+    buscar_pedidos_por_telefone
 )
 
 router = APIRouter(
@@ -49,3 +50,16 @@ def buscar_pedido(
         )
 
     return pedido
+
+@router.get(
+    "/cliente/{telefone}",
+    response_model=list[PedidoResponse]
+)
+def buscar_pedidos_cliente(
+    telefone: str,
+    db: Session = Depends(get_db)
+):
+    return buscar_pedidos_por_telefone(
+        db,
+        telefone
+    )

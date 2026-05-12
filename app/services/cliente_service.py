@@ -8,7 +8,7 @@ def cadastrar_cliente(db: Session, cliente: ClienteCreate):
         nome=cliente.nome,
         telefone=cliente.telefone,
         email=cliente.email,
-        tipo_entrega=cliente.tipo_entrega.value,
+        tipo_entrega=cliente.tipo_entrega,
         endereco=cliente.endereco,
     )
 
@@ -17,3 +17,15 @@ def cadastrar_cliente(db: Session, cliente: ClienteCreate):
     db.refresh(novo_cliente)
 
     return novo_cliente
+
+def listar_clientes(db: Session):
+    return db.query(Cliente).all()
+
+
+def buscar_cliente_por_telefone(
+    db: Session,
+    telefone: str
+):
+    return db.query(Cliente).filter(
+        Cliente.telefone == telefone
+    ).first()

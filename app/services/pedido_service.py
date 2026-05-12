@@ -5,6 +5,8 @@ from app.models.pedido_model import (
     ItemPedido
 )
 
+from app.models.cliente_model import Cliente
+
 
 def criar_pedido(db: Session, dados_pedido):
     novo_pedido = Pedido(
@@ -42,3 +44,18 @@ def buscar_pedido_por_id(db: Session, pedido_id: int):
     return db.query(Pedido).filter(
         Pedido.id == pedido_id
     ).first()
+
+def buscar_pedidos_por_telefone(
+    db: Session,
+    telefone: str
+):
+    cliente = db.query(Cliente).filter(
+        Cliente.telefone == telefone
+    ).first()
+
+    if cliente is None:
+        return []
+
+    return db.query(Pedido).filter(
+        Pedido.cliente_id == cliente.id
+    ).all()
