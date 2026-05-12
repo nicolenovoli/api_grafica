@@ -26,6 +26,7 @@ def cadastrar_pedido(
     pedido: PedidoCreate,
     db: Session = Depends(get_db)
 ):
+    """Cria um novo pedido"""
     return criar_pedido(db, pedido)
 
 
@@ -33,6 +34,7 @@ def cadastrar_pedido(
 def buscar_pedidos(
     db: Session = Depends(get_db)
 ):
+    """Busca todos os pedidos disponíveis"""
     return listar_pedidos(db)
 
 
@@ -41,6 +43,7 @@ def buscar_pedido(
     pedido_id: int,
     db: Session = Depends(get_db)
 ):
+    """Busca um pedido por ID"""
     pedido = buscar_pedido_por_id(db, pedido_id)
 
     if pedido is None:
@@ -59,6 +62,7 @@ def buscar_pedidos_cliente(
     telefone: str,
     db: Session = Depends(get_db)
 ):
+    """Busca os pedidos por telefone"""
     return buscar_pedidos_por_telefone(
         db,
         telefone

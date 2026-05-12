@@ -14,6 +14,7 @@ router = APIRouter(
 
 @router.post("/", response_model=ClienteResponse)
 def criar_cliente(cliente: ClienteCreate, db: Session = Depends(get_db)):
+    """Cria um novo cliente"""
     return cadastrar_cliente(db, cliente)
 
 @router.get(
@@ -24,6 +25,7 @@ def buscar_cliente_telefone(
     telefone: str,
     db: Session = Depends(get_db)
 ):
+    """Busca um cliente por telefone"""
     cliente = buscar_cliente_por_telefone(
         db,
         telefone
