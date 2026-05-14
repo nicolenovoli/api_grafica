@@ -3,18 +3,17 @@ from sqlalchemy import (
     Integer,
     String,
     Float,
+    ForeignKey,
 )
 
 from sqlalchemy.orm import relationship
 
 from app.database import Base
 
-from app.models.produto_opcao_model import ProdutoOpcao
 
+class ProdutoOpcao(Base):
 
-class Produto(Base):
-
-    __tablename__ = "produtos"
+    __tablename__ = "produto_opcoes"
 
     id = Column(
         Integer,
@@ -22,27 +21,28 @@ class Produto(Base):
         index=True,
     )
 
+    produto_id = Column(
+        Integer,
+        ForeignKey("produtos.id"),
+        nullable=False,
+    )
+
+    grupo = Column(
+        String,
+        nullable=False,
+    )
+
     nome = Column(
         String,
         nullable=False,
     )
 
-    descricao = Column(
-        String,
-        nullable=False,
-    )
-
-    preco_base = Column(
+    valor_adicional = Column(
         Float,
-        nullable=False,
+        default=0,
     )
 
-    imagem = Column(
-        String,
-        nullable=True,
-    )
-
-    opcoes = relationship(
-        "ProdutoOpcao",
-        back_populates="produto",
+    produto = relationship(
+        "Produto",
+        back_populates="opcoes",
     )

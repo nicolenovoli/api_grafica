@@ -1,13 +1,29 @@
 from pydantic import BaseModel
+
 from typing import Optional
+from typing import List
+
+from app.schemas.produto_opcao_schema import (
+    ProdutoOpcaoResponse
+)
 
 
 class ProdutoResponse(BaseModel):
+
     id: int
+
     nome: str
+
     descricao: str
-    preco: float
+
+    preco_base: float
+
     imagem: Optional[str] = None
 
+    opcoes: List[
+        ProdutoOpcaoResponse
+    ] = []
+
     class Config:
+
         from_attributes = True
