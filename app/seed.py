@@ -14,9 +14,6 @@ def criar_produtos_iniciais(db):
 
             "preco_base": 89.00,
 
-            "imagem":
-                "cartoes_visita.png",
-
             "opcoes": [
 
                 {
@@ -53,9 +50,6 @@ def criar_produtos_iniciais(db):
 
             "preco_base": 120.00,
 
-            "imagem":
-                "panfletos.png",
-
             "opcoes": [
 
                 {
@@ -79,9 +73,6 @@ def criar_produtos_iniciais(db):
                 "Pastas com bolso interno e impressão personalizada.",
 
             "preco_base": 320.00,
-
-            "imagem":
-                "pastas.png",
 
             "opcoes": [
 
@@ -107,9 +98,6 @@ def criar_produtos_iniciais(db):
 
             "preco_base": 45.00,
 
-            "imagem":
-                "cartazes.png",
-
             "opcoes": [
 
                 {
@@ -133,9 +121,6 @@ def criar_produtos_iniciais(db):
                 "Folders com dobras profissionais.",
 
             "preco_base": 180.00,
-
-            "imagem":
-                "folders.png",
 
             "opcoes": [
 
@@ -161,9 +146,6 @@ def criar_produtos_iniciais(db):
 
             "preco_base": 65.00,
 
-            "imagem":
-                "etiquetas.png",
-
             "opcoes": [
 
                 {
@@ -187,9 +169,6 @@ def criar_produtos_iniciais(db):
                 "Blocos personalizados para clínicas.",
 
             "preco_base": 75.00,
-
-            "imagem":
-                "receituario.png",
 
             "opcoes": [
 
@@ -223,8 +202,6 @@ def criar_produtos_iniciais(db):
                 descricao=item["descricao"],
 
                 preco_base=item["preco_base"],
-
-                imagem=item["imagem"],
             )
 
             db.add(novo_produto)

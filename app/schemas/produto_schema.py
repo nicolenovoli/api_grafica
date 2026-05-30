@@ -1,6 +1,5 @@
 from pydantic import BaseModel
 
-from typing import Optional
 from typing import List
 
 from app.schemas.produto_opcao_schema import (
@@ -17,8 +16,6 @@ class ProdutoResponse(BaseModel):
     descricao: str
 
     preco_base: float
-
-    imagem: Optional[str] = None
 
     opcoes: List[
         ProdutoOpcaoResponse

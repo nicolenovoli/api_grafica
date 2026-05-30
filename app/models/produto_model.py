@@ -9,8 +9,6 @@ from sqlalchemy.orm import relationship
 
 from app.database import Base
 
-from app.models.produto_opcao_model import ProdutoOpcao
-
 
 class Produto(Base):
 
@@ -35,11 +33,6 @@ class Produto(Base):
     preco_base = Column(
         Float,
         nullable=False,
-    )
-
-    imagem = Column(
-        String,
-        nullable=True,
     )
 
     opcoes = relationship(
