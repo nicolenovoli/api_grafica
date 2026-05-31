@@ -10,7 +10,7 @@ def criar_produtos_iniciais(db):
             "nome": "Cartões de Visita",
 
             "descricao":
-                "Cartões de visita com impressão de alta definição.",
+                "Cartões de visita com impressão de alta definição. Quantidade produzida: 1 milheiro.",
 
             "preco_base": 89.00,
 
@@ -46,7 +46,7 @@ def criar_produtos_iniciais(db):
             "nome": "Panfletos",
 
             "descricao":
-                "Panfletos coloridos para divulgação.",
+                "Panfletos coloridos para divulgação. Quantidade produzida: 1 milheiro.",
 
             "preco_base": 120.00,
 
@@ -70,7 +70,7 @@ def criar_produtos_iniciais(db):
             "nome": "Pastas Personalizadas",
 
             "descricao":
-                "Pastas com bolso interno e impressão personalizada.",
+                "Pastas com bolso interno e impressão personalizada. Quantidade produzida: 250 unidades.",
 
             "preco_base": 320.00,
 
@@ -94,7 +94,7 @@ def criar_produtos_iniciais(db):
             "nome": "Cartazes",
 
             "descricao":
-                "Cartazes em diversos tamanhos com cores vibrantes.",
+                "Cartazes em diversos tamanhos com cores vibrantes. Quantidade produzida: 500 unidades.",
 
             "preco_base": 45.00,
 
@@ -118,7 +118,7 @@ def criar_produtos_iniciais(db):
             "nome": "Folders",
 
             "descricao":
-                "Folders com dobras profissionais.",
+                "Folders com dobras profissionais. Quantidade produzida: 500 unidades.",
 
             "preco_base": 180.00,
 
@@ -142,7 +142,7 @@ def criar_produtos_iniciais(db):
             "nome": "Etiquetas Adesivas",
 
             "descricao":
-                "Etiquetas adesivas personalizadas.",
+                "Etiquetas adesivas personalizadas. Quantidade produzida: 1 milheiro.",
 
             "preco_base": 65.00,
 
@@ -166,7 +166,7 @@ def criar_produtos_iniciais(db):
             "nome": "Receituário Médico",
 
             "descricao":
-                "Blocos personalizados para clínicas.",
+                "Blocos personalizados para clínicas. Quantidade produzida: 200 unidades.",
 
             "preco_base": 75.00,
 
