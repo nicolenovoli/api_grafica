@@ -5,6 +5,7 @@ from datetime import datetime
 
 class ItemPedidoCreate(BaseModel):
     produto_id: int
+    nome_produto: str
     quantidade: int
     valor_unitario: float
     subtotal: float

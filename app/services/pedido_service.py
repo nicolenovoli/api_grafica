@@ -1,5 +1,7 @@
 from sqlalchemy.orm import Session
 
+from app.models.produto_model import Produto
+
 from app.models.pedido_model import (
     Pedido,
     ItemPedido
@@ -59,12 +61,21 @@ def criar_pedido(db: Session, dados_pedido):
 
         for item in dados_pedido.itens:
 
+            produto = db.query(Produto).filter(
+                Produto.id == item.produto_id).first()
+
+            nome_produto = (
+                produto.nome
+                if produto
+                else f"Produto {item.produto_id}"
+            )
+
             itens_texto += (
-                f"Produto ID: {item.produto_id}\n"
+                f"Produto: {nome_produto}\n"
                 f"Quantidade: {item.quantidade}\n"
-                f"Valor Unitário: R$ {item.valor_unitario}\n"
-                f"Subtotal: R$ {item.subtotal}\n"
-                f"Observações: {item.observacoes}\n\n"
+                f"Valor Unitário: R$ {item.valor_unitario:.2f}\n"
+                f"Subtotal: R$ {item.subtotal:.2f}\n"
+                f"Observações: {item.observacoes or 'Nenhuma'}\n\n"
             )
 
         corpo_email = f"""
