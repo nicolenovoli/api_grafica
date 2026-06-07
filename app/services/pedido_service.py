@@ -139,6 +139,7 @@ def buscar_pedidos_por_telefone(
     db: Session,
     telefone: str
 ):
+
     cliente = db.query(Cliente).filter(
         Cliente.telefone == telefone
     ).first()
@@ -146,6 +147,14 @@ def buscar_pedidos_por_telefone(
     if cliente is None:
         return []
 
-    return db.query(Pedido).filter(
+    pedidos = db.query(Pedido).filter(
         Pedido.cliente_id == cliente.id
     ).all()
+
+    for pedido in pedidos:
+
+        for item in pedido.itens:
+
+            item.nome_produto = item.produto.nome
+
+    return pedidos

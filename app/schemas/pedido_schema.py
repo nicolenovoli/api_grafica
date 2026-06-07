@@ -21,6 +21,8 @@ class PedidoCreate(BaseModel):
 class ItemPedidoResponse(BaseModel):
     id: int
     produto_id: int
+    nome_produto: str
+
     quantidade: int
     valor_unitario: float
     subtotal: float
@@ -34,7 +36,6 @@ class PedidoResponse(BaseModel):
     id: int
     cliente_id: int
     valor_total: float
-    status: str
     data_pedido: datetime
 
     itens: List[ItemPedidoResponse]
