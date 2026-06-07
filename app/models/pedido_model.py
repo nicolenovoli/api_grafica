@@ -56,6 +56,8 @@ class ItemPedido(Base):
         nullable=False
     )
 
+    nome_produto = Column(String, nullable=False)
+
     quantidade = Column(Integer, nullable=False)
 
     valor_unitario = Column(Float, nullable=False)

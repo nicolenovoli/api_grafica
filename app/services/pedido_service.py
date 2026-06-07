@@ -32,6 +32,7 @@ def criar_pedido(db: Session, dados_pedido):
         novo_item = ItemPedido(
             pedido_id=novo_pedido.id,
             produto_id=item.produto_id,
+            nome_produto=item.nome_produto,
             quantidade=item.quantidade,
             valor_unitario=item.valor_unitario,
             subtotal=item.subtotal,

@@ -47,3 +47,6 @@ htmlcov/
 
 # FastAPI/Uvicorn
 *.pid
+
+# Email
+.env
