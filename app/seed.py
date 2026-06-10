@@ -46,7 +46,7 @@ def criar_produtos_iniciais(db):
             "nome": "Panfletos",
 
             "descricao":
-                "Panfletos coloridos para divulgação. Quantidade produzida: 1 milheiro.",
+                "Panfletos coloridos para divulgação.",
 
             "preco_base": 120.00,
 
@@ -94,7 +94,7 @@ def criar_produtos_iniciais(db):
             "nome": "Cartazes",
 
             "descricao":
-                "Cartazes em diversos tamanhos com cores vibrantes. Quantidade produzida: 500 unidades.",
+                "Cartazes em diversos tamanhos com cores vibrantes. Quantidade minima produzida: 5 unidades.",
 
             "preco_base": 45.00,
 
@@ -166,7 +166,7 @@ def criar_produtos_iniciais(db):
             "nome": "Receituário Médico",
 
             "descricao":
-                "Blocos personalizados para clínicas. Quantidade produzida: 200 unidades.",
+                "Blocos personalizados para clínicas.",
 
             "preco_base": 75.00,
 
